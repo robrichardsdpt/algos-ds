@@ -28,3 +28,9 @@ function validAnagram(str1, str2){
   }
   return true
 }
+
+validAnagram('taco', 'ocat')
+validAnagram('', '')
+validAnagram('samelength', 'samelengths')
+validAnagram('anagram', 'managra')
+validAnagram('asdfjkl', 'afsjdlk')
