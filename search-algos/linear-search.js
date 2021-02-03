@@ -1,6 +1,6 @@
-function linearSearch(arr, num){
+function linearSearch(arr, val){
   for(let i = 0; i < arr.length; i++){
-      if(arr[i] === num) {
+      if(arr[i] === val) {
           return i
       }
   }
