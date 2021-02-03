@@ -1,3 +1,4 @@
+// O(n) time and space
 function validAnagram(str1, str2){
   const freqInStr1 = {}
   if(str1.length !== str2.length) {
@@ -34,3 +35,5 @@ validAnagram('', '')
 validAnagram('samelength', 'samelengths')
 validAnagram('anagram', 'managra')
 validAnagram('asdfjkl', 'afsjdlk')
+validAnagram('asdfjkl', 'qwertyu')
+validAnagram('hello', 'healo')
