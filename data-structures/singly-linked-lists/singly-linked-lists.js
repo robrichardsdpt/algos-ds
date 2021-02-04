@@ -43,6 +43,36 @@ class SinglyLinkedList {
     }
     return currentHead
   }
+  unshift(val) {
+    let newNode = new Node(val)
+    if(!this.head) {
+      this.head = newNode
+      this.tail = this.head     
+    } else {
+      newNode.next = this.head
+      this.head = newNode
+    }
+    this.length++
+    return this
+  }
+  get(index) {
+    if(index >= this.length || index < 0) return undefined
+    counter = 0
+    let current = this.head
+    while (counter !== index) {
+      current = current.next
+      counter++
+    }
+    return current
+  }
+  set(index, value) {
+    let getValue = this.get(index)
+    if(getValue) {
+      getValue.value = value
+      return true
+    }
+    return false
+  }
 }
 
 class Node {
