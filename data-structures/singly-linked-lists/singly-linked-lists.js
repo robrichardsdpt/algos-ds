@@ -73,6 +73,18 @@ class SinglyLinkedList {
     }
     return false
   }
+  insert(index, value) {
+    if(index < 0 || index > this.length) return false
+    if(index === 0) return !!this.unshift(value)
+    if (index === this.length) return !!this.push(value)
+    let getPrevValue = this.get(index - 1)
+    const newNode = new Node(value)
+    let temp = getPrevValue.next
+    getPrevValue.next = newNode
+    newNode.next = temp
+    this.length++
+    return true
+  }
 }
 
 class Node {
