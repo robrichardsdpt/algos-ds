@@ -6,7 +6,7 @@ const selectionSort = (arr) => {
         min = j
       }
     }
-    if(i !== lowest){
+    if(i !== min){
       [arr[i], arr[min]] = [arr[min], arr[i]]
     }
   }
