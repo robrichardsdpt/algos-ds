@@ -5,7 +5,7 @@ function substringInString (str, sub) {
       if(str[i+j] === sub[j]) {
         break
       }
-      if(j=== sub.length -1) {
+      if(j === sub.length - 1) {
         count++
       }
     }
