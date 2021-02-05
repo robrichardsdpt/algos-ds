@@ -87,14 +87,28 @@ class SinglyLinkedList {
   }
 
   remove(index) {
-    if(index < 0 || index > this.length) return false
-    if(index === 0) return !!this.shift()
-    if(index === 0) return !!this.pop()
+    if(index < 0 || index >= this.length) return undefined
+    if(index === 0) return this.shift()
+    if(index === this.length-1) return this.pop()
     let prevValue = this.get(index-1)
-    let temp = prevValue.next
-    prevValue.next = temp.next
-    this.length --
-    return true
+    let removed = prevValue.next
+    prevValue.next = removed.next
+    this.length--
+    return removed
+  }
+
+  // reverse needs to be checked with Colt
+  reverse() {
+    if(this.length <= 1) return this
+    let current = this.head
+    let previous
+    while(current.next){
+     this.tail.next = current
+     let newTail = this.get(this.length - 1)
+     newTail.next = null
+     previous = current
+     current = current.next
+    }
   }
 
 }
