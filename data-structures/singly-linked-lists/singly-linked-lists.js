@@ -99,18 +99,19 @@ class SinglyLinkedList {
 
   // reverse needs to be checked with Colt
   reverse() {
-    if(this.length <= 1) return this
     let current = this.head
-    let previous
-    while(current.next){
-     this.tail.next = current
-     let newTail = this.get(this.length - 1)
-     newTail.next = null
-     previous = current
-     current = current.next
+    this.head = this.tail
+    this.tail = current
+    let previous = null
+    let next
+    for(let i = 0; i < this.length; i++) {
+      next = current.next
+      current.next = previous
+      previous = current
+      current = next
     }
+    return this
   }
-
 }
 
 class Node {

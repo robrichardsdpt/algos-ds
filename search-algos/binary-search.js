@@ -1,10 +1,9 @@
 function binarySearch(arr, val){
   let start = 0
   let end = arr.length - 1
-  let mid = Math.floor((start+end/2))
+  let mid = Math.floor((start+end)/2)
 
-  
-  while(arr[mid] !== val) {
+  while(arr[mid] !== val && start <= end) {
     if (val < arr[mid]) {
       end = mid - 1 
     } else {
@@ -12,5 +11,6 @@ function binarySearch(arr, val){
     }
     mid = Math.floor((start+end)/2)
   }
-  arr[mid] === val ? mid : -1
+  return arr[mid] === val ? mid : -1
 }
+

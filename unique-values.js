@@ -1,3 +1,4 @@
+// O(n) time and space
 function countUniqueValues(arr){
   const arrObj = {}
   for(let i = 0; i < arr.length; i++) {
