@@ -28,7 +28,7 @@ class Stack {
     if(this.first === this.last) {
       this.last = null
     }
-    this.first = this.next
+    this.first = this.first.next
     this.size--
     return removed.value
   }
