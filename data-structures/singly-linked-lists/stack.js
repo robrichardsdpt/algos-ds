@@ -8,6 +8,7 @@ class Stack {
     this.last = null
     this.size = 0
   }
+  // push works like unshift
   push(val){
     const newNode = new Node(val)
     if(!first) {
@@ -20,6 +21,7 @@ class Stack {
     }
     return ++this.size
   }
+  // pop works like shift
   pop(){
     if(!first) return null
     let removed = this.first
