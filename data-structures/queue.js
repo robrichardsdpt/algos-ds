@@ -10,15 +10,14 @@ class Queue {
   // enqueue works like push
   enqueue(val){
     let newNode = new Node(val)
-    if(!this.head) {
-      this.head = newNode
-      this.tail = this.head
+    if(!this.first) {
+      this.first = newNode
+      this.last = this.first
     } else {
-      this.tail.next = newNode
-      this.tail = newNode
+      this.last.next = newNode
+      this.last = newNode
     }
-    this.size++
-    return this
+    return ++this.size
   }
   // dequeue works like shift
   dequeue(){
@@ -27,7 +26,7 @@ class Queue {
     if(this.first === this.last) {
       this.last = null
     }
-    this.first = this.next
+    this.first = this.first.next
     this.size--
     return removed.value
   }
