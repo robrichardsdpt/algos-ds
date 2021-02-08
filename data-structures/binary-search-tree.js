@@ -29,6 +29,22 @@ class BinarySearchTree {
       }
     }
   }
+  find(value) {
+    if(this.root === null) return false
+    let current = this.root
+    let found = false
+    while(!found && current) {
+      if(value < current.value) {
+        current = current.left
+      } else if (value > current.value) {
+        current = current.right
+      } else {
+        found = true
+      }
+    }
+    if(!found) return false
+    return current
+  }
 }
 
 class Node {
