@@ -17,3 +17,13 @@ const fibRevisited = (n, memo=[]) => {
   memo[n] = result
   return result
 }
+
+// tabulated fibonacci
+const fibTable = (n) => {
+  if(n<= 2) return 1
+  let fibNums = [0,1,1]
+  for(let i = 0; i <= n; i++){
+    fibNums[i] = fibNums[i-1] + fibNums[i-2]
+  }
+  return fibNums[n]
+}
