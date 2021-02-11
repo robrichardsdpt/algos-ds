@@ -4,8 +4,7 @@
 // fib(35) // 9227465
 
 function fib(n){
-  if (n === 0) return 0
-  if (n === 1) return 1
+  if (n <=2) return 1
   return fib(n - 1) + fib(n - 2)
 }
 
@@ -19,7 +18,7 @@ const fibRevisited = (n, memo=[]) => {
 }
 
 // tabulated fibonacci
-const fibTable = (n) => {
+const fibTabs = (n) => {
   if(n<= 2) return 1
   let fibNums = [0,1,1]
   for(let i = 0; i <= n; i++){
